@@ -75,10 +75,7 @@ public class TemperatureUtilsTest {
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);         */
-        //assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        ///fail("The test case is a prototype.");
-//HelperUtils.getReading("SYD", (double) -33.9357, (double) 151.166, toDate("2016-08-01T22:05:13Z"), worldTopographyMap);        
+     
     }
 
 }

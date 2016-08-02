@@ -45,21 +45,29 @@ public class HelperUtils {
     /**
      * This function formats and prints the given information to the console/stdout
      * @param ATACode
+     * @param measurementLatitude
+     * @param measurementLongitude
      * @param measurementDate
      * @param temperature
      * @param pressure
      * @param humidity
      * @param condition
      */
-    public static void writeToConsole(String ATACode, Date measurementDate, Double temperature, Double pressure, int humidity, String condition) {
+    public static void writeToConsole(String ATACode,Double measurementLatitude, Double measurementLongitude, Date measurementDate, Double temperature, Double pressure, int humidity, String condition) {
         String delimiter = "|";
         LocalDateTime localDate = measurementDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         String text = localDate.format(formatter);
+        DecimalFormat lattitudeFormat = new DecimalFormat("+#,##0.00;-#");
         DecimalFormat temperatureFormat = new DecimalFormat("+#,##0.00;-#");
         DecimalFormat presureFormat = new DecimalFormat("#.#");
         String output = "";
-        output = output.concat(ATACode).concat(delimiter).concat(text).concat(delimiter).concat(condition).concat(delimiter).concat(temperatureFormat.format(temperature)).concat(delimiter).concat(presureFormat.format(pressure)).concat(delimiter).concat(Integer.toString(humidity));
+        output = output.concat(ATACode)
+                .concat(delimiter).concat(lattitudeFormat.format(measurementLatitude))
+                .concat(delimiter).concat(lattitudeFormat.format(measurementLongitude))
+                .concat(delimiter).concat(text).concat(delimiter)
+                .concat(condition).concat(delimiter).concat(temperatureFormat.format(temperature))
+                .concat(delimiter).concat(presureFormat.format(pressure)).concat(delimiter).concat(Integer.toString(humidity));
         System.out.println(output);
     }
 
@@ -88,10 +96,8 @@ public class HelperUtils {
         Double temperature = TemperatureUtils.temperature(29.2669, height, SeasonUtils.season(measurementLatitude, measurementDate));
         Double pressure = PresureUtils.presure(height);
         int humidity = HumidityUtils.humidity();
-        String condition = ConditionUtils.condition(temperature);
-        LocalDateTime localDate = measurementDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
-        HelperUtils.writeToConsole(ATACode, measurementDate, temperature, pressure, humidity, condition);
+        String condition = ConditionUtils.condition(temperature);;
+        HelperUtils.writeToConsole(ATACode, measurementLatitude,  measurementLongitude, measurementDate, temperature, pressure, humidity, condition);
     }
 
     /**

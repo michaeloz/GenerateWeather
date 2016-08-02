@@ -34,7 +34,7 @@ public class Generate {
          LHR Latitude : 51.4706	Longitude : -0.461941 // London Heathrow
          HEM Latitude : 60.2544	Longitude : 25.0465 // Helsinki
          PHB Latitude : -2.9	Longitude : -41.7667 //  Parnaiba Brazil
-         KEF Latitude : 63.995	Longitude : -22.6234 // Reykjavik
+         RKZ Latitude : 29.3463	Longitude : 89.3006 // Tibeten airport
          */
 
         //System.out.println("Winter/Summer");
