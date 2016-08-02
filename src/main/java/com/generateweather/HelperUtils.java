@@ -53,22 +53,24 @@ public class HelperUtils {
      * @param humidity
      * @param condition
      */
-    public static void writeToConsole(String ATACode,Double measurementLatitude, Double measurementLongitude, Date measurementDate, Double temperature, Double pressure, int humidity, String condition) {
+    public static void writeToConsole(String ATACode,Double measurementLatitude, Double measurementLongitude, Date measurementDate, Double temperature, Double pressure, int humidity, String condition) {        
         String delimiter = "|";
+        String latLongDelimeter = ",";
         LocalDateTime localDate = measurementDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
         String text = localDate.format(formatter);
-        DecimalFormat lattitudeFormat = new DecimalFormat("+#,##0.00;-#");
+        DecimalFormat latLongFormat = new DecimalFormat("+#,##0.0000;-#");
         DecimalFormat temperatureFormat = new DecimalFormat("+#,##0.00;-#");
         DecimalFormat presureFormat = new DecimalFormat("#.#");
         String output = "";
         output = output.concat(ATACode)
-                .concat(delimiter).concat(lattitudeFormat.format(measurementLatitude))
-                .concat(delimiter).concat(lattitudeFormat.format(measurementLongitude))
+                .concat(delimiter).concat(latLongFormat.format(measurementLatitude))
+                .concat(latLongDelimeter).concat(latLongFormat.format(measurementLongitude))
                 .concat(delimiter).concat(text).concat(delimiter)
                 .concat(condition).concat(delimiter).concat(temperatureFormat.format(temperature))
                 .concat(delimiter).concat(presureFormat.format(pressure)).concat(delimiter).concat(Integer.toString(humidity));
-        System.out.println(output);
+        System.out.println(output);        
+        
     }
 
     /**
