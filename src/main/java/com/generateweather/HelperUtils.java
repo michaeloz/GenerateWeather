@@ -95,7 +95,7 @@ public class HelperUtils {
      */
     public static void getReading(String ATACode, Double measurementLatitude, Double measurementLongitude, Date measurementDate, BufferedImage image) {
         Double height = HeightUtils.height(image, measurementLatitude, measurementLongitude);
-        Double temperature = TemperatureUtils.temperature(29.2669, height, SeasonUtils.season(measurementLatitude, measurementDate));
+        Double temperature = TemperatureUtils.temperature(measurementLatitude, height, SeasonUtils.season(measurementLatitude, measurementDate));
         Double pressure = PresureUtils.presure(height);
         int humidity = HumidityUtils.humidity();
         String condition = ConditionUtils.condition(temperature);;
