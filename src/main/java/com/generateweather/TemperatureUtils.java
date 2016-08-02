@@ -69,33 +69,3 @@ public class TemperatureUtils {
     }
     
 }
-
-
-/*
-    public static double temperature(double measurementLatitude, Double height, Seasion seasion) {
-        // get an index between 0 and 1 indicating how far the measurementLatitude is from the nearest/furthest point on Earth to the sun
-        double distanceIndex = DistanceUtils.distanceIndex(measurementLatitude, seasion);
-        // generate a random daily temperature variance
-        int dailyVariance = HelperUtils.randInt(0, Definitions.DEGREES_C_DAILY_TEMPERATURE_VARIANCE);
-        // that we either add to or subtract from the caculated temperature
-        double sign = dailyVariance % 2 == 0 ? -1 : 1;
-        // 
-        boolean isSouthernHemisphere = measurementLatitude < 0;
-        double baseTemperature = 0;
-        switch (seasion) {
-            case Summer:
-                baseTemperature = distanceIndex < Definitions.POLAR_DISTANCE_INDEX_CUTOFF_SUMMER ? Definitions.MAXIMUM_TEMPERATURE_AVERAGE : (isSouthernHemisphere ? Definitions.MAXIMUM_SOUTH_POLE_TEMPERATURE_AVERAGE : Definitions.MAXIMUM_NORTH_POLE_TEMPERATURE_AVERAGE);
-                break;
-            case Winter:
-                baseTemperature = distanceIndex < Definitions.POLAR_DISTANCE_INDEX_CUTOFF_WINTER ? Definitions.MINIMUM_TEMPERATURE_AVERAGE : (isSouthernHemisphere ? Definitions.MINIMUM_SOUTH_POLE_TEMPERATURE_AVERAGE : Definitions.MINIMUM_NORTH_POLE_TEMPERATURE_AVERAGE);
-                break;
-            case Autumn:
-            case Spring:
-                baseTemperature = distanceIndex < Definitions.POLAR_DISTANCE_INDEX_CUTOFF_TRANSITION ? Definitions.TRANSITION_TEMPERATURE_AVERAGE : (isSouthernHemisphere ? Definitions.TRANSITION_SOUTH_POLE_TEMPERATURE_AVERAGE : Definitions.TRANSITION_NORTH_POLE_TEMPERATURE_AVERAGE);
-                break;
-        }
-        double temperature = (baseTemperature * (1 - (distanceIndex - 0.001))) + (distanceIndex * dailyVariance * sign) + (HeightUtils.heightIndex(height) * Definitions.DEGREES_C_DROP_PER_1000_METERS);
-        return temperature;
-    }
-
-*/

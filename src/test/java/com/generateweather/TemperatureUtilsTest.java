@@ -40,40 +40,41 @@ public class TemperatureUtilsTest {
      */
     @Test
     public void testTemperature() {
-        System.out.println("temperature");
-        double measurementLatitude = -33.9357;
-        Double height = (double) 0;
-        Definitions.Seasion seasion = Definitions.Seasion.Summer;
-        double expResult = 0.0;
-     /*    TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
+        /* Uncomment to step through code for debug/test etc.
+        
+         System.out.println("temperature");
+         double measurementLatitude = -33.9357;
+         Double height = (double) 0;
+         Definitions.Seasion seasion = Definitions.Seasion.Summer;
+         double expResult = 0.0;
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring); */
 
-         measurementLatitude = -90;
+        /*   measurementLatitude = -90;
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
-         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);         
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);          */
         /*    measurementLatitude = 90;
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
          TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);           */
-     /*     measurementLatitude = 29.3463;
-        height = (double) 201;
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring); */
+        /*     measurementLatitude = 29.3463;
+         height = (double) 201;
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring); */
 
-    /*    measurementLatitude = 60.2544;
-        height = (double) 0;
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
-        TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);         */
-        
+        /*    measurementLatitude = 60.2544;
+         height = (double) 0;
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Summer);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Winter);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Autumn);
+         TemperatureUtils.temperature(measurementLatitude, height, Definitions.Seasion.Spring);         */
         //assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         ///fail("The test case is a prototype.");
